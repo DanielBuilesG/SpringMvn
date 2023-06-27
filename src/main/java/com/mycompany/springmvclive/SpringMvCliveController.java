@@ -10,16 +10,22 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @author daniel.builes
  */
 
-@Controller 
+@Controller
 public class SpringMvCliveController {
 
     @GetMapping("/greeting")
-    public String greeting(@RequestParam (name ="name", required= false, defaultValue="World")String name, Model model) {
+    public String greeting(@RequestParam(name = "name", required = false, defaultValue = "World") String name, 
+            @RequestParam(name = "Lname", required = false, defaultValue = "World") String Lname , Model model) {
         model.addAttribute("name", name);
+        model.addAttribute("Lname", Lname);
         return "greeting";
     }
-    
-    
+
+    @GetMapping("/index")
+    public String defaultPage() {
+        return "index";
+    }
+
     
     
 }
