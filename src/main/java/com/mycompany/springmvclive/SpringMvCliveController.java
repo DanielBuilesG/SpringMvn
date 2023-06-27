@@ -25,7 +25,7 @@ public class SpringMvCliveController {
     public String defaultPage() {
         return "index";
     }
-
+    
     
     
 }
